@@ -1,4 +1,3 @@
-/* Reset básico y estilos globales */
 * {
     box-sizing: border-box;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -7,7 +6,7 @@
 
 body {
     margin: 0;
-    padding: 0 20px; /* Margen lateral entre películas y body */
+    padding: 0 20px;
     background-color: #FFF8E7;
     overflow-x: hidden;
 }
@@ -66,10 +65,10 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 69px;
+    margin-top: 65px;
 
-    width: 100vw;       /* Ocupa todo el ancho real del viewport */
-    margin-left: calc(-1 * 20px);  /* Anula el padding del body */
+    width: 100vw;
+    margin-left: calc(-1 * 20px);
     padding-left: 0;
     padding-right: 0;
 }
@@ -250,8 +249,8 @@ footer {
     color: #FFF8E7;
     margin-top: 40px;
 
-    width: 100vw;       /* Ocupa todo el ancho real del viewport */
-    margin-left: calc(-1 * 20px);  /* Anula el padding del body */
+    width: 100vw;
+    margin-left: calc(-1 * 20px);
     padding-left: 0;
     padding-right: 0;
 }
@@ -260,26 +259,56 @@ footer p {
     color: #FFF8E7;
 }
 
-/* 📱 Responsive media queries */
-@media (max-width: 768px) {    
+
+@media (max-width: 768px) {
     .movie-details {
         flex-direction: column;
-        gap: 20px;
-        max-height: none;
-    }
-
-    .img-cont img,
-    .info-cont {
-        max-width: 90vw;
-    }
-
-    .info-cont {
         align-items: center;
+        gap: 20px;
+    }
+
+    .img-cont {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .img-cont img {
+        width: 80%;
+        height: auto;
+    }
+
+    .info-cont {
+        padding: 0 10px;
+        max-width: 100%;
+        overflow-wrap: break-word;
+        word-break: break-word;
+        align-items: center;
+    }
+
+    .details-cont {
+        padding: 20px 10px;
+        align-items: flex-start;
+    }
+
+    .navbar .cont h2 {
+        display: none;
+    }
+
+    .navbar {
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .form input {
+        width: 150px;
     }
 
     .results div:hover,
     .featured div:hover,
     .watch-later div:hover {
-        transform: scale(1); /* Desactiva zoom en pantallas chicas */
+        transform: none;
     }
 }
